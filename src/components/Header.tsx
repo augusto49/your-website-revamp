@@ -17,24 +17,25 @@ const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-card/80 backdrop-blur-md shadow-sm">
-      <div className="container mx-auto flex items-center justify-between py-4 px-4">
-        <a href="#" className="flex items-center gap-1">
-          <span className="text-2xl font-bold tracking-tight">
+    <header className="sticky top-0 z-50 bg-card backdrop-blur-md border-b border-border/50">
+      <div className="container mx-auto flex items-center justify-between py-5 px-6">
+        <a href="#" className="flex items-center gap-2 shrink-0">
+          <span className="text-2xl font-bold tracking-tight italic">
             <span className="text-innova-blue">Y</span>
             <span className="text-foreground">nnova</span>
           </span>
-          <span className="text-[10px] text-muted-foreground leading-tight block -mt-1">
-            A evolução do seu<br />Plano de Saúde
+          <span className="text-[9px] text-muted-foreground leading-tight block -mt-0.5 font-medium">
+            A evolução do seu<br />
+            <span className="text-innova-blue font-semibold">Plano de Saúde</span>
           </span>
         </a>
 
-        <nav className="hidden lg:flex items-center gap-6">
+        <nav className="hidden lg:flex items-center gap-8">
           {navItems.map((item) => (
             <a
               key={item}
               href="#"
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              className="text-[13px] font-medium text-foreground/70 hover:text-primary transition-colors relative after:absolute after:bottom-[-2px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all hover:after:w-full"
             >
               {item === "Portais" ? (
                 <span className="flex items-center gap-1">
@@ -57,12 +58,12 @@ const Header = () => {
       </div>
 
       {mobileOpen && (
-        <nav className="lg:hidden bg-card border-t border-border px-4 pb-4">
+        <nav className="lg:hidden bg-card border-t border-border px-6 pb-4">
           {navItems.map((item) => (
             <a
               key={item}
               href="#"
-              className="block py-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+              className="block py-2.5 text-sm text-foreground/70 hover:text-primary transition-colors"
             >
               {item}
             </a>
